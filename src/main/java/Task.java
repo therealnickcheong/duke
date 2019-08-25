@@ -14,7 +14,11 @@ public class Task {
     }
 
     public String getTaskType() {
-        return taskType; //return tick or X symbols
+        return taskType;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     //...

@@ -7,8 +7,12 @@ public class Event extends Task {
         this.at = at;
         this.taskType = "E";
     }
+
+    public String getAt() {
+        return at;
+    }
     @Override
     public String toString() {
-        return "[" + super.getTaskType() + "][" + super.getStatusIcon() + "] " + super.description + " (at: " + at + ")";
+        return "[" + super.getTaskType() + "][" + super.getStatusIcon() + "] " + super.getDescription() + " (at: " + at + ")";
     }
 }

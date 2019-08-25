@@ -1,8 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
-    public static void main(String[] args) throws DukeException {
+    public static void main(String[] args){
         /*String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -15,8 +19,10 @@ public class Duke {
         System.out.println("\tWhat can I do for you?");
         System.out.println("\t____________________________________________________________");
 
+         DataReadWrite SaveFile = new DataReadWrite();
         ArrayList<Task> toDoList = new ArrayList<>();
         boolean exitFlag = false;
+
         while(!exitFlag){
             Scanner myObj = new Scanner(System.in);  // Create a Scanner object
             String userCmd = myObj.nextLine();  // Read user input
@@ -26,6 +32,7 @@ public class Duke {
                 }
 
                 if(userCmd.equals("bye")){
+                    SaveFile.saveData(toDoList);
                     System.out.println("\t____________________________________________________________");
                     System.out.println("\tBye. Hope to see you again soon!");
                     System.out.println("\t____________________________________________________________");
@@ -105,7 +112,7 @@ public class Duke {
                 }else{
                     throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
-            }catch(DukeException e){
+            }catch(DukeException | IOException e){
                 System.out.println(e.getMessage());
             }
         }
