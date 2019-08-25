@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, DukeException{
         /*String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -19,8 +19,11 @@ public class Duke {
         System.out.println("\tWhat can I do for you?");
         System.out.println("\t____________________________________________________________");
 
-         DataReadWrite SaveFile = new DataReadWrite();
+        DataReadWrite SaveFile = new DataReadWrite();
         ArrayList<Task> toDoList = new ArrayList<>();
+        SaveFile.readFile();
+
+
         boolean exitFlag = false;
 
         while(!exitFlag){
