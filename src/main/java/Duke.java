@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,9 +17,9 @@ public class Duke {
         System.out.println("\t____________________________________________________________");
 
         DataReadWrite SaveFile = new DataReadWrite();
-        ArrayList<Task> toDoList = new ArrayList<>();
-        SaveFile.readFile();
-
+        ArrayList<Task> DukeTaskList = new ArrayList<>();
+        SaveFile.readFile();//read Data upon launch
+        DukeTaskList = SaveFile.updateDukeTaskList();//update DukeTaskList upon launch
 
         boolean exitFlag = false;
 
@@ -35,32 +32,32 @@ public class Duke {
                 }
 
                 if(userCmd.equals("bye")){
-                    SaveFile.saveData(toDoList);
+                    SaveFile.saveData(DukeTaskList);// Save Data upon exit
                     System.out.println("\t____________________________________________________________");
                     System.out.println("\tBye. Hope to see you again soon!");
                     System.out.println("\t____________________________________________________________");
                     exitFlag = true;
                 }else if(userCmd.split(" ")[0].equals("done")){
-                    int taskNum = Integer.parseInt(userCmd.substring(userCmd.lastIndexOf(' ') + 1));  ;
+                    int taskNum = Integer.parseInt(userCmd.substring(userCmd.lastIndexOf(' ') + 1));
                     //System.out.println(taskNum);
-                    if(taskNum > toDoList.size()){
+                    if(taskNum > DukeTaskList.size()){
                         System.out.println("index out of range");
                     }else{
-                        //System.out.println(toDoList.get(taskNum-1).description);
-                        toDoList.get(taskNum-1).markAsDone();
+                        //System.out.println(DukeTaskList.get(taskNum-1).description);
+                        DukeTaskList.get(taskNum-1).markAsDone();
                         System.out.println("\t____________________________________________________________");
                         System.out.println("\tNice! I've marked this task as done:");
-                        System.out.println("\t" + toDoList.get(taskNum-1).toString());
+                        System.out.println("\t" + DukeTaskList.get(taskNum-1).toString());
                         System.out.println("\t____________________________________________________________");
                     }
 
 
                 }else if(userCmd.equals("list")){
-                    //list toDoList
+                    //list DukeTaskList
                     System.out.println("\t____________________________________________________________");
                     System.out.println("\tHere are the tasks in your list:");
-                    for(int i = 0; i<toDoList.size(); i++){
-                        System.out.println("\t" + (i+1) + "." + toDoList.get(i).toString());
+                    for(int i = 0; i<DukeTaskList.size(); i++){
+                        System.out.println("\t" + (i+1) + "." + DukeTaskList.get(i).toString());
                     }
                     System.out.println("\t____________________________________________________________");
 
@@ -70,11 +67,11 @@ public class Duke {
                     }else{
                         String todo = userCmd.split("todo ")[1];
                         ToDo t = new ToDo(todo);
-                        toDoList.add(t);
+                        DukeTaskList.add(t);
                         System.out.println("\t____________________________________________________________");
                         System.out.println("\tGot it. I've added this task:");
                         System.out.println("\t"+ t.toString());  // Output user inputS
-                        System.out.println("\tNow you have " + toDoList.size() +" tasks in the list.");
+                        System.out.println("\tNow you have " + DukeTaskList.size() +" tasks in the list.");
                         System.out.println("\t____________________________________________________________");
                     }
 
@@ -88,11 +85,11 @@ public class Duke {
                         String by = deadline[1];
                         String desc = deadline[0].substring(9);
                         Deadline t = new Deadline(desc, by);
-                        toDoList.add(t);
+                        DukeTaskList.add(t);
                         System.out.println("\t____________________________________________________________");
                         System.out.println("\tGot it. I've added this task:");
                         System.out.println("\t"+ t.toString());  // Output user inputS
-                        System.out.println("\tNow you have " + toDoList.size() +" tasks in the list.");
+                        System.out.println("\tNow you have " + DukeTaskList.size() +" tasks in the list.");
                         System.out.println("\t____________________________________________________________");
                     }
 
@@ -104,11 +101,11 @@ public class Duke {
                         String at = event[1];
                         String desc = event[0].substring(6);
                         Event t = new Event(desc, at);
-                        toDoList.add(t);
+                        DukeTaskList.add(t);
                         System.out.println("\t____________________________________________________________");
                         System.out.println("\tGot it. I've added this task:");
                         System.out.println("\t" + t.toString());  // Output user inputS
-                        System.out.println("\tNow you have " + toDoList.size() + " tasks in the list.");
+                        System.out.println("\tNow you have " + DukeTaskList.size() + " tasks in the list.");
                         System.out.println("\t____________________________________________________________");
                     }
 

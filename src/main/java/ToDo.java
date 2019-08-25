@@ -5,7 +5,12 @@ public class ToDo extends Task {
     public ToDo(String description) {
         super(description);
         this.taskType = "T";
+    }
 
+    public ToDo(String description, boolean isDone) {
+        super(description);
+        this.taskType = "T";
+        this.isDone = isDone;
     }
 
     @Override
