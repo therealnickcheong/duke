@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class DataReadWrite {
@@ -23,6 +20,15 @@ public class DataReadWrite {
                         .append(((Event) task).getAt()).append("\n");
             }
         }
-        System.out.println(savedTasks);
+        //System.out.println(savedTasks);
+        writeFile(savedTasks.toString());
+        System.out.println("Tasks Saved");
+    }
+
+    public void writeFile(String tasksToWrite) throws IOException{
+        FileWriter fileToWrite = new FileWriter(filepath);
+        BufferedWriter bufferWriter = new BufferedWriter(fileToWrite);
+        bufferWriter.write(tasksToWrite);
+        bufferWriter.close();
     }
 }
