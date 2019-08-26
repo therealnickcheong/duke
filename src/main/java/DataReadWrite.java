@@ -1,4 +1,6 @@
 import java.io.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class DataReadWrite {
@@ -56,7 +58,9 @@ public class DataReadWrite {
 
         }else if(taskType.equals("D")){
             String taskBy = taskProperties[3];
-            Task t = new Deadline(taskDesc, taskBy, taskIsDone);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
+            LocalDateTime formattedBy = LocalDateTime.parse(taskBy, formatter);
+            Task t = new Deadline(taskDesc, formattedBy, taskIsDone);
             savedTaskList.add(t);
 
         }else if(taskType.equals("E")){

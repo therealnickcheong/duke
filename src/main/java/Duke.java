@@ -1,9 +1,12 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.io.IOException;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
-    public static void main(String[] args) throws IOException, DukeException{
+    public static void main(String[] args) throws IOException, DukeException, DateTimeParseException{
         /*String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -84,7 +87,9 @@ public class Duke {
                         String[] deadline = userCmd.split(" /by ");
                         String by = deadline[1];
                         String desc = deadline[0].substring(9);
-                        Deadline t = new Deadline(desc, by);
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
+                        LocalDateTime formattedBy = LocalDateTime.parse(by, formatter);
+                        Deadline t = new Deadline(desc, formattedBy);
                         DukeTaskList.add(t);
                         System.out.println("\t____________________________________________________________");
                         System.out.println("\tGot it. I've added this task:");
@@ -112,8 +117,10 @@ public class Duke {
                 }else{
                     throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
-            }catch(DukeException | IOException e){
+            }catch(DukeException | IOException e ){
                 System.out.println(e.getMessage());
+            }catch(DateTimeParseException e){
+                System.out.println("Input of /by has to be in \"dd/MM/yyyy HHmm\" format e.g \"14/03/1997 1159\"");
             }
         }
     }
