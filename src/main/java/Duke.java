@@ -131,6 +131,32 @@ public class Duke {
                         System.out.println("\t____________________________________________________________");
                     }
 
+                }else if(userCmd.split(" ")[0].equals("find")){
+                    if(userCmd.split(" ").length == 1){
+                        throw new DukeException("☹ OOPS!!! The description of a find cannot be empty.");
+                    }else{
+                        String find = userCmd.split("find ")[1];
+                        StringBuilder foundTasks = new StringBuilder();
+                        int findCounter = 0;
+                        for(Task task: DukeTaskList){
+                            if(task.getDescription().contains(find)){
+                                findCounter++;
+                                foundTasks.append("\t").append(findCounter).append(".").append(task.toString()).append("\n");
+                            }
+                        }
+                        if(foundTasks.length() == 0){
+                            System.out.println("\t____________________________________________________________");
+                            System.out.println("\tNo Results");
+                            System.out.println("\t____________________________________________________________");
+                        }else{
+                            foundTasks.deleteCharAt(foundTasks.length() - 1);
+                            System.out.println("\t____________________________________________________________");
+                            System.out.println("\tHere are the matching tasks in your list:");
+                            System.out.println(foundTasks);  // Output user inputS
+                            System.out.println("\t____________________________________________________________");
+                        }
+                    }
+
                 }else{
                     throw new DukeException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 }
