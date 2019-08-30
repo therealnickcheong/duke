@@ -2,5 +2,4 @@ T - true - borrow book
 D - true - return book - 2/12/2019 1800
 E - true - project meeting - Mon 2-4pm
 D - false - CS2101 minutes - 30/8/2019 1900
-T - false - borrow some books
-D - true - CS2101 minutes - 30/8/2019 1900
+T - true - borrow more books
