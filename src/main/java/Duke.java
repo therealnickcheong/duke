@@ -45,7 +45,7 @@ public class Duke {
                     int taskNum = Integer.parseInt(userCmd.substring(userCmd.lastIndexOf(' ') + 1));
                     //System.out.println(taskNum);
                     if(taskNum > DukeTaskList.size()){
-                        System.out.println("index out of range");
+                        throw new DukeException("Done index out of range");
                     }else{
                         //System.out.println(DukeTaskList.get(taskNum-1).description);
                         DukeTaskList.get(taskNum-1).markAsDone();
@@ -56,7 +56,23 @@ public class Duke {
                     }
 
 
-                }else if(userCmd.equals("list")){
+                }else if(userCmd.split(" ")[0].equals("delete")){
+                int taskNum = Integer.parseInt(userCmd.substring(userCmd.lastIndexOf(' ') + 1));
+                //System.out.println(taskNum);
+                if(taskNum > DukeTaskList.size()){
+                    throw new DukeException("Delete index out of range");
+                }else{
+                    //System.out.println(DukeTaskList.get(taskNum-1).description);
+                    System.out.println("\t____________________________________________________________");
+                    System.out.println("\tNoted. I've removed this task:");
+                    System.out.println("\t" + DukeTaskList.get(taskNum-1).toString());
+                    DukeTaskList.remove(taskNum-1);
+                    System.out.println("\tNow you have " + DukeTaskList.size() +" tasks in the list.");
+                    System.out.println("\t____________________________________________________________");
+                }
+
+
+            }else if(userCmd.equals("list")){
                     //list DukeTaskList
                     System.out.println("\t____________________________________________________________");
                     System.out.println("\tHere are the tasks in your list:");
