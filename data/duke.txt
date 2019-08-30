@@ -1,5 +1,4 @@
 T - true - borrow book
-D - true - return book - Sunday
-E - false - project meeting - Mon 2-4pm
-T - false - cook lunch
-D - true - pay bills - Saturday
+D - true - return book - 2/12/2019 1800
+E - true - project meeting - Mon 2-4pm
+D - false - CS2101 minutes - 30/8/2019 1900
