@@ -4,7 +4,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class DataReadWrite {
-    public static final String filepath = "data/duke.txt";
+    //public static final String filepath = "data/duke.txt";
+    public static final String filepath ="C:/Users/Lenovo/Documents/sem1 1920/CS2113T/duke-test/data/duke.txt";
     private ArrayList<Task> savedTaskList = new ArrayList<>();
 
     public void saveData(ArrayList<Task> taskList)throws IOException{

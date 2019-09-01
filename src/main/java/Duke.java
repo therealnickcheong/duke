@@ -24,10 +24,14 @@ public class Duke {
         boolean exitFlag = false;
         while(!exitFlag){
             Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-            String userCmd = myObj.nextLine();  // Read user input
-            Parser parseCmd = new Parser(SaveFile, DukeTaskList);
-            parseCmd.parse(userCmd);
-            exitFlag = parseCmd.getExitStatus();
+            if(myObj.hasNextLine()){
+                String userCmd = myObj.nextLine(); // Read user input
+                Parser parseCmd = new Parser(SaveFile, DukeTaskList);
+                parseCmd.parse(userCmd);
+                exitFlag = parseCmd.getExitStatus();
+            }else{
+                break;
+            }
         }
     }
 
