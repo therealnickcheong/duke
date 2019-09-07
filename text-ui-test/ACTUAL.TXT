@@ -10,7 +10,10 @@ Hello from
 	What can I do for you?
 	____________________________________________________________
 	____________________________________________________________
-	Got it. I've added this task:
-	[T][?] more shit
-	Now you have 4 tasks in the list.
+	Here are the tasks in your list:
+	1.[T][?] borrow book
+	2.[D][?] return book (by: 2/12/2019 1800)
+	3.[E][?] meeting (at: tues 1400-1600)
+	4.[D][?] implement gradle (by: 4/9/2019 1900)
+	5.[T][?] more shit
 	____________________________________________________________
