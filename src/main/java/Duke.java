@@ -22,8 +22,9 @@ public class Duke {
     public void run(){
         ui.printWelcome();
         boolean exitFlag = false;
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         while(!exitFlag){
-            Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+
             if(myObj.hasNextLine()){
                 String userCmd = myObj.nextLine(); // Read user input
                 Parser parseCmd = new Parser(SaveFile, DukeTaskList);

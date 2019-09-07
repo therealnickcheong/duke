@@ -2,4 +2,5 @@ T - true - borrow book
 D - true - return book - 2/12/2019 1800
 E - true - meeting - tues 1400-1600
 D - false - implement gradle - 4/9/2019 1900
-T - false - more shit
+T - false - JavaDoc
+T - false - some shit

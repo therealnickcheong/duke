@@ -13,19 +13,19 @@ public class DataReadWrite {
         for(Task task : taskList){
             if(task instanceof ToDo){
                 //System.out.println(task.toString());
-                savedTasks.append(task.getTaskType()).append(" - ").append(task.isDone).append(" - ").append(task.getDescription()).append("\n");
+                savedTasks.append(task.getTaskType()).append(" - ").append(task.isDone).append(" - ").append(task.getDescription()).append("\r\n");
             }else if(task instanceof Deadline){
                 //System.out.println(task.toString());
                 savedTasks.append(task.getTaskType()).append(" - ").append(task.isDone).append(" - ").append(task.getDescription()).append(" - ")
-                        .append(((Deadline) task).getBy()).append("\n");
+                        .append(((Deadline) task).getBy()).append("\r\n");
             }else if(task instanceof Event){
                 //System.out.println(task.toString());
                 savedTasks.append(task.getTaskType()).append(" - ").append(task.isDone).append(" - ").append(task.getDescription()).append(" - ")
-                        .append(((Event) task).getAt()).append("\n");
+                        .append(((Event) task).getAt()).append("\r\n");
             }
         }
         //System.out.println(savedTasks);
-        //savedTasks.deleteCharAt(savedTasks.length() - 1);
+        savedTasks.deleteCharAt(savedTasks.length() - 1);
         writeFile(savedTasks.toString());
         System.out.println("\tTasks Saved");
     }
