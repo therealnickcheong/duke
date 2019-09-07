@@ -3,18 +3,35 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ *This is the Parser Class
+ * Handles user input and executes the corresponding command
+ */
+
 public class Parser {
+
 
     public boolean exitStatus = false;
     private DataReadWrite SaveFile;
     private TaskList DukeTaskList;
     private Ui taskUi = new Ui();
 
+    /**
+     * This Constructor "Parser" instantiates the necessary variables to be used in Class "Parser"
+     * @param save This is the first parameter to the Parser Constructor
+     * @param taskList This is the second parameter to the Parser Constructor
+     */
+
     public Parser(DataReadWrite save, TaskList taskList){
         this.SaveFile = save;
         this.DukeTaskList = taskList;
 
     }
+
+    /**
+     * This method "parse" is used to execute the correct command based on user input
+     * @param userCmd This is the first parameter to the parse method
+     */
 
     public void parse(String userCmd){
         try{
@@ -115,6 +132,11 @@ public class Parser {
             System.out.println("Input of /by has to be in \"dd/MM/yyyy HHmm\" format e.g \"14/03/1997 1159\"");
         }
     }
+
+    /**
+     * This method "getExitStatus" is used to end the Duke Program
+     * @return boolean This is the exit status of the Duke program
+     */
 
     public boolean getExitStatus(){
         return exitStatus;

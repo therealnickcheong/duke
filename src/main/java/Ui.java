@@ -1,3 +1,8 @@
+/**
+ * This is the Ui Class
+ * Outputs messages to the console after command is executed
+ */
+
 public class Ui {
 
     public void printBye(){

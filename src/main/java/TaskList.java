@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+/**
+ * This is the TaskList Class
+ * contains the TaskList for Duke as well as the constructors and methods for TaskList
+ */
+
 public class TaskList {
 
     protected ArrayList<Task> DukeTaskList;
