@@ -22,9 +22,9 @@ public class Event extends Task {
 
     /**
      * This constructor "Event" is used to construct the Event object when its created when retrieving data from Duke.txt
-     * @param description This is the first parameter to the Event constructor
-     * @param at his is the second parameter to the Event constructor
-     * @param isDone This is the third parameter to the Event constructor
+     * @param description This is the description of the task that is to be created
+     * @param at This is the date the event is taking place
+     * @param isDone This is the completion status of the task
      */
 
     public Event(String description, String at, Boolean isDone) {

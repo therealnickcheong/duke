@@ -13,8 +13,8 @@ public class Deadline extends Task {
 
     /**
      * This constructor "Deadline" is used to construct the Deadline object when its created upon user input of "deadline xxx /by d/M/yyyy HHmm"
-     * @param description This is the first parameter to the Deadline constructor
-     * @param by This is the second parameter to the Deadline constructor
+     * @param description This is the description of the task that is to be created
+     * @param by This is the due date of the deadline
      */
 
     public Deadline(String description, LocalDateTime by) {
@@ -25,9 +25,9 @@ public class Deadline extends Task {
 
     /**
      * This constructor "Deadline" is used to construct the Deadline object when its created when retrieving data from Duke.txt
-     * @param description This is the first parameter to the Deadline constructor
-     * @param by his is the second parameter to the Deadline constructor
-     * @param isDone This is the third parameter to the Deadline constructor
+     * @param description This is the description of the task that is to be created
+     * @param by This is the due date of the deadline
+     * @param isDone This is the completion status of the task
      */
 
     public Deadline(String description, LocalDateTime by, Boolean isDone) {

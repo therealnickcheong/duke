@@ -18,8 +18,8 @@ public class Parser {
 
     /**
      * This Constructor "Parser" instantiates the necessary variables to be used in Class "Parser"
-     * @param save This is the first parameter to the Parser Constructor
-     * @param taskList This is the second parameter to the Parser Constructor
+     * @param save This is the object which handles the reading and writing of Duke.txt to save data
+     * @param taskList This is the data structure used to store tasks during the operation of Duke
      */
 
     public Parser(DataReadWrite save, TaskList taskList){
@@ -30,7 +30,7 @@ public class Parser {
 
     /**
      * This method "parse" is used to execute the correct command based on user input
-     * @param userCmd This is the first parameter to the parse method
+     * @param userCmd This is the command given by the user
      */
 
     public void parse(String userCmd){

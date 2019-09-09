@@ -18,7 +18,7 @@ public class DataReadWrite {
     /**
      * This method "saveData" is used to read data from DukeTaskList and write it to a StringBuilder
      * Calls method "writeFile" to save the StringBuilder to Duke.txt
-     * @param taskList This is the first parameter to the saveData method
+     * @param taskList TaskList that stores the tasks of Duke
      * @throws IOException exception thrown when there is an error reading or writing to Duke.txt
      */
 
@@ -46,7 +46,7 @@ public class DataReadWrite {
 
     /**
      * This method "writeFile" is used to write a String to Duke.txt
-     * @param tasksToWrite This is the first parameter to the writeFile method
+     * @param tasksToWrite StringBuilder that is to be written into Duke.txt
      * @throws IOException exception thrown when there is an error reading or writing to Duke.txt
      */
 

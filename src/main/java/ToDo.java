@@ -10,7 +10,7 @@ public class ToDo extends Task {
 
     /**
      * This constructor "ToDo" is used to construct the ToDo object when its created upon user input of "todo xxx"
-     * @param description This is the first parameter to the ToDo constructor
+     * @param description This is the description of the task that is to be created
      */
 
 
@@ -21,8 +21,8 @@ public class ToDo extends Task {
 
     /**
      * This constructor "ToDo" is used to construct the ToDo object when its created when retrieving data from Duke.txt
-     * @param description This is the first parameter to the ToDo constructor
-     * @param isDone This is the second parameter to the ToDo constructor
+     * @param description This is the description of the task that is to be created
+     * @param isDone This is the completion status of the task
      */
 
     public ToDo(String description, boolean isDone) {

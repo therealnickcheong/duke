@@ -10,7 +10,7 @@ public class Task {
 
     /**
      * This constructor "Task" is used to instantiate the attributes of the Task Object
-     * @param description This is the first parameter to the Task constructor
+     * @param description This is the description of the task that is to be created
      */
 
     public Task(String description) {
